@@ -6,49 +6,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Welcome, My Love ♡</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-    --cream: #f8f3eb;
-    --gold: #bd9b64;
-    --dark: #493b32;
-    --soft: #e8d9c5;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    background: var(--cream);
-    color: var(--dark);
     font-family: 'Poppins', sans-serif;
+    background: #f8f3eb;
+    color: #625447;
     overflow-x: hidden;
 }
 
-/* =========================
-   LOGIN PAGE
-========================= */
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* LOGIN */
 
 #loginPage {
     position: fixed;
     inset: 0;
-    z-index: 9999;
-    background:
-        radial-gradient(circle at top left, #e9d9c5, transparent 45%),
-        linear-gradient(135deg, #f8f3eb, #e8d9c5);
+    z-index: 1000;
+    background: linear-gradient(135deg, #f8f1e7, #e8d8c2);
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     padding: 20px;
-    transition: opacity .8s ease, visibility .8s ease;
+    transition: opacity 1s ease, visibility 1s ease;
 }
 
 #loginPage.hide {
@@ -59,401 +48,264 @@ body {
 
 .login-box {
     width: 100%;
-    max-width: 430px;
+    max-width: 420px;
     padding: 55px 35px;
     text-align: center;
-    background: #faf7f1;
-    border: 1px solid var(--gold);
-    box-shadow: 0 20px 70px #493b3220;
-    animation: fadeUp 1s ease;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid #d7bd96;
+    border-radius: 5px;
+    box-shadow: 0 15px 50px rgba(100,70,40,0.12);
 }
 
-.login-heart {
-    font-size: 45px;
-    color: var(--gold);
-    margin-bottom: 20px;
-}
-
-.login-subtitle {
-    font-size: 9px;
-    letter-spacing: 4px;
-    color: var(--gold);
+.login-box .small {
+    letter-spacing: 5px;
+    font-size: 10px;
+    color: #aa895e;
     margin-bottom: 20px;
 }
 
 .login-box h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 43px;
-    font-weight: 400;
-    line-height: 1.2;
+    font-size: 48px;
+    font-weight: 500;
+    color: #8b6b46;
+    margin-bottom: 12px;
 }
 
-.login-box h1 span {
-    color: var(--gold);
-    font-style: italic;
-}
-
-.login-line {
-    width: 55px;
-    height: 1px;
-    background: var(--gold);
-    margin: 25px auto;
-}
-
-.login-description {
+.login-box p {
     font-size: 12px;
-    color: #958371;
-    line-height: 2;
-    margin-bottom: 25px;
+    color: #927f6b;
+    margin-bottom: 30px;
+    line-height: 1.8;
 }
 
 .login-box input {
     width: 100%;
     padding: 15px;
-    border: 1px solid #d8c6a9;
-    background: #fffdf9;
+    border: 1px solid #d8c5a8;
+    background: rgba(255,255,255,0.6);
+    text-align: center;
     outline: none;
     font-family: 'Poppins', sans-serif;
-    font-size: 11px;
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.login-box input:focus {
-    border-color: var(--gold);
+    letter-spacing: 4px;
+    color: #705b43;
+    margin-bottom: 18px;
 }
 
 .login-box button {
     width: 100%;
-    padding: 16px;
-    background: var(--dark);
+    padding: 15px;
     border: none;
+    background: #a98a61;
     color: white;
-    font-family: 'Poppins', sans-serif;
-    font-size: 10px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     cursor: pointer;
-    transition: .4s;
+    transition: 0.3s;
 }
 
 .login-box button:hover {
-    background: var(--gold);
+    background: #806342;
 }
 
-#errorMessage {
-    color: #ad6860;
-    font-size: 11px;
+#error {
+    color: #a85c50;
+    font-size: 12px;
     margin-top: 15px;
-    min-height: 20px;
 }
 
-.login-footer {
-    margin-top: 35px;
-    color: var(--gold);
-    font-size: 9px;
-    letter-spacing: 3px;
-}
-
-/* =========================
-   MAIN WEBSITE
-========================= */
+/* MAIN WEBSITE */
 
 #mainWebsite {
     display: none;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background:
-      radial-gradient(circle at 10% 20%, #e9d9c555, transparent 35%),
-      radial-gradient(circle at 90% 80%, #d9c3a855, transparent 35%);
-    pointer-events: none;
-    z-index: -1;
-}
-
-nav {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    padding: 28px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 23px;
-    color: var(--gold);
-}
-
-.nav-text {
-    font-size: 10px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-}
-
 .hero {
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 100px 20px 70px;
+    padding: 40px 20px;
+    background:
+        linear-gradient(rgba(248,243,235,0.65), rgba(248,243,235,0.85)),
+        url('image.png') center/cover no-repeat;
 }
 
-.eyebrow {
-    color: var(--gold);
-    font-size: 11px;
+.hero-content {
+    max-width: 750px;
+}
+
+.subtitle {
     letter-spacing: 6px;
-    text-transform: uppercase;
+    color: #a48660;
+    font-size: 11px;
     margin-bottom: 25px;
-    animation: fadeUp 1.2s ease;
 }
 
 .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(45px, 9vw, 95px);
-    font-weight: 400;
-    line-height: 1.15;
-}
-
-.hero h1 span {
-    color: var(--gold);
-    font-style: italic;
-}
-
-.line {
-    width: 65px;
-    height: 1px;
-    background: var(--gold);
-    margin: 30px auto;
+    font-size: clamp(55px, 10vw, 100px);
+    font-weight: 500;
+    color: #806344;
+    line-height: 1;
 }
 
 .hero p {
+    margin-top: 25px;
     font-size: 13px;
     letter-spacing: 1px;
-    line-height: 2.2;
-    color: #8c7a69;
+    color: #806f5c;
+    line-height: 2;
 }
 
-.button {
-    margin-top: 35px;
-    border: 1px solid var(--gold);
-    background: transparent;
-    padding: 16px 35px;
-    color: var(--dark);
-    font-family: 'Poppins', sans-serif;
+.section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 48px;
+    color: #92744e;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    font-size: 12px;
     letter-spacing: 2px;
-    font-size: 10px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: .4s;
-}
-
-.button:hover {
-    background: var(--gold);
-    color: white;
-    transform: translateY(-4px);
-}
-
-/* HEART ANIMATION */
-
-.heart {
-    position: fixed;
-    bottom: -30px;
-    color: #c5a77d;
-    opacity: .5;
-    pointer-events: none;
-    animation: float 8s linear forwards;
-    z-index: 5;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0) rotate(0);
-        opacity: 0;
-    }
-    20% {
-        opacity: .6;
-    }
-    100% {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    color: #aa9275;
+    margin-bottom: 45px;
 }
 
 /* LOVE LETTER */
 
-.letter-section {
-    padding: 100px 20px;
-    text-align: center;
-    background: #eee5d9;
-}
-
-.section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 42px;
-    font-weight: 400;
-}
-
-.section-subtitle {
-    color: #9b8874;
-    font-size: 11px;
-    letter-spacing: 3px;
-    margin-top: 15px;
-    text-transform: uppercase;
-}
-
 .letter {
-    max-width: 650px;
-    margin: 55px auto 0;
-    padding: 55px 35px;
-    background: #faf7f1;
-    border: 1px solid #d8c6a9;
-    box-shadow: 0 20px 60px #78634c18;
-    position: relative;
+    max-width: 750px;
+    margin: auto;
+    padding: 55px 45px;
+    background: #fffdf9;
+    border: 1px solid #e4d5bf;
+    box-shadow: 0 15px 45px rgba(100,70,40,0.07);
+    text-align: left;
+    line-height: 2.2;
+    font-size: 14px;
+    color: #756554;
 }
 
-.letter::before {
-    content: "♡";
-    position: absolute;
-    top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--gold);
-    font-size: 24px;
-}
-
-.letter p {
-    font-family: 'Playfair Display', serif;
-    font-size: 19px;
-    line-height: 2;
-    color: #766454;
-}
-
-.signature {
-    margin-top: 35px;
-    color: var(--gold);
-    font-family: 'Playfair Display', serif;
-    font-size: 25px;
-    font-style: italic;
+.letter h2 {
+    font-size: 35px;
+    color: #a1845c;
+    margin-bottom: 25px;
 }
 
 /* GALLERY */
 
 .gallery {
-    padding: 100px 8%;
-    text-align: center;
+    background: #f0e8dc;
 }
 
 .gallery-grid {
+    max-width: 950px;
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    max-width: 750px;
-    margin: 55px auto 0;
+    gap: 25px;
 }
 
-.photo {
-    height: 400px;
-    background: linear-gradient(145deg, #e8d9c5, #c9ae8a);
-    border: 8px solid #fffaf3;
-    border-radius: 5px;
-    box-shadow: 0 10px 30px #6c55401c;
-    overflow: hidden;
-    transition: .5s;
-}
-
-.photo:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px #6c554033;
-}
-
-.photo img {
+.gallery-grid img {
     width: 100%;
-    height: 100%;
+    height: 430px;
     object-fit: cover;
+    border: 8px solid #fffdf9;
+    box-shadow: 0 10px 30px rgba(80,60,40,0.12);
+    transition: transform 0.4s;
+}
+
+.gallery-grid img:hover {
+    transform: translateY(-8px);
 }
 
 /* FINAL */
 
 .final {
-    background: #493b32;
-    color: #f8f3eb;
-    padding: 110px 20px;
+    padding: 120px 20px;
     text-align: center;
+    background: linear-gradient(135deg, #e8d8c2, #f8f3eb);
 }
 
 .final h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(35px, 6vw, 60px);
-    font-weight: 400;
-}
-
-.final h2 span {
-    color: #d2b582;
-    font-style: italic;
+    font-size: clamp(42px, 8vw, 70px);
+    color: #92744e;
+    font-weight: 500;
 }
 
 .final p {
     margin-top: 25px;
-    color: #d4c5b2;
-    font-size: 12px;
-    line-height: 2.2;
+    font-size: 13px;
+    line-height: 2;
+    color: #806f5c;
 }
 
 footer {
-    background: #493b32;
-    color: #b6a38c;
+    padding: 25px;
     text-align: center;
-    padding: 20px;
-    font-size: 10px;
+    font-size: 11px;
     letter-spacing: 2px;
+    color: #a48b6b;
 }
 
-/* MOBILE */
+/* FLOATING HEARTS */
 
-@media(max-width: 650px) {
-    nav {
-        padding: 20px;
+.heart {
+    position: fixed;
+    bottom: -30px;
+    color: #c6a47c;
+    opacity: 0.5;
+    pointer-events: none;
+    animation: floatUp 7s linear forwards;
+    z-index: 10;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+    }
+}
+
+@media(max-width: 600px) {
+    .login-box {
+        padding: 40px 25px;
     }
 
-    .nav-text {
-        font-size: 8px;
-        letter-spacing: 2px;
+    .login-box h1 {
+        font-size: 39px;
+    }
+
+    .section {
+        padding: 75px 18px;
+    }
+
+    .section-title {
+        font-size: 39px;
+    }
+
+    .letter {
+        padding: 35px 25px;
     }
 
     .gallery-grid {
         grid-template-columns: 1fr;
-        max-width: 330px;
-        gap: 25px;
+        gap: 20px;
     }
 
-    .photo {
+    .gallery-grid img {
         height: 350px;
-    }
-
-    .letter {
-        padding: 55px 22px 35px;
-    }
-
-    .section-title {
-        font-size: 34px;
     }
 }
 </style>
@@ -461,311 +313,185 @@ footer {
 
 <body>
 
-<!-- =========================
-     LOGIN PAGE
-========================= -->
+<!-- LOGIN PAGE -->
 
 <div id="loginPage">
-
     <div class="login-box">
+        <div class="small">A LITTLE SURPRISE FOR YOU</div>
 
-        <div class="login-heart">♡</div>
+        <h1>Welcome,<br>My Love ♡</h1>
 
-        <p class="login-subtitle">
-            A LITTLE SURPRISE FOR YOU
-        </p>
-
-        <h1>
-            Welcome,<br>
-            <span>My Love.</span>
-        </h1>
-
-        <div class="login-line"></div>
-
-        <p class="login-description">
-            This little world was made<br>
-            especially for you.
+        <p>
+            Before entering our little world,<br>
+            please enter the secret password.
         </p>
 
         <input
             type="password"
             id="password"
-            placeholder="Enter our secret password"
+            placeholder="Enter Password"
+            onkeydown="if(event.key === 'Enter') login()"
         >
 
-        <button onclick="login()">
-            Unlock My Heart ♡
-        </button>
+        <button onclick="login()">UNLOCK MY HEART ♡</button>
 
-        <p id="errorMessage"></p>
-
-        <div class="login-footer">
-            MADE WITH LOVE ♡
-        </div>
-
+        <div id="error"></div>
     </div>
-
 </div>
 
-<!-- =========================
-     MAIN WEBSITE
-========================= -->
+<!-- MAIN WEBSITE -->
 
 <div id="mainWebsite">
-
-    <nav>
-        <div class="logo">♡ Forever</div>
-        <div class="nav-text">A little love story</div>
-    </nav>
 
     <!-- HERO -->
 
     <section class="hero">
+        <div class="hero-content">
+            <div class="subtitle">A SPECIAL PLACE FOR SOMEONE SPECIAL</div>
 
-        <div class="eyebrow">
-            ✦ A Special Letter For You ✦
-        </div>
-
-        <h1>
-            To My<br>
-            <span>Beloved.</span>
-        </h1>
-
-        <div class="line"></div>
-
-        <p>
-            Ada banyak hal indah di dunia ini,<br>
-            tetapi bertemu denganmu adalah<br>
-            salah satu yang paling aku syukuri.
-        </p>
-
-        <button class="button" onclick="openLetter()">
-            Open My Heart ♡
-        </button>
-
-    </section>
-
-    <!-- LETTER -->
-
-    <section class="letter-section" id="letter">
-
-        <h2 class="section-title">A Letter For You</h2>
-
-        <div class="section-subtitle">
-            Words From My Heart
-        </div>
-
-        <div class="letter">
+            <h1>My Dearest Love</h1>
 
             <p>
-                Untuk seseorang yang selalu punya tempat
-                istimewa di hatiku.
+                In a world full of ordinary things,<br>
+                you are my favorite extraordinary.
+            </p>
+        </div>
+    </section>
+
+    <!-- LOVE LETTER -->
+
+    <section class="section">
+        <h2 class="section-title">A Letter For You</h2>
+
+        <p class="section-subtitle">
+            SOMETHING FROM THE BOTTOM OF MY HEART
+        </p>
+
+        <div class="letter">
+            <h2>My Love, ♡</h2>
+
+            <p>
+                Hai, sayangkuuuu.
                 <br><br>
 
-                Aku mungkin bukan seseorang yang sempurna.
-                Aku juga tidak selalu bisa memberikan
-                hal-hal yang luar biasa.
-                <br><br>
-
-                Namun, satu hal yang ingin kamu tahu:
-                aku selalu ingin melihatmu bahagia.
+                Kenalin namanya Paduka, dia adalah pacarku sekaligus dunia ku.
+                Aku membuat halaman kecil ini khusus untuk kamu.
+                Mungkin terlihat sederhana, tetapi ada banyak rasa
+                sayang yang ingin aku sampaikan melalui setiap
+                bagian di dalamnya.
                 <br><br>
 
                 Terima kasih sudah hadir dalam hidupku.
-                Terima kasih untuk setiap senyum,
-                cerita, dan kenangan yang kita buat.
+                Terima kasih untuk setiap senyuman, cerita di telpon,
+                perhatian, dan hal-hal kecil yang membuat hari-hariku
+                terasa lebih indah.
                 <br><br>
 
-                Jika waktu bisa terus berjalan,
-                aku berharap kita tetap berjalan
-                bersama, saling menggenggam,
-                dan saling memilih setiap hari.
+                Aku tidak tahu bagaimana perjalanan kita ke depannya,
+                tetapi aku berharap kita bisa terus berjalan bersama,
+                saling memahami, saling menjaga, dan saling memilih
+                setiap harinya.
                 <br><br>
 
-                I love you, more than words can say. ♡
+                Aku mungkin tidak selalu sempurna, tetapi aku ingin
+                selalu berusaha menjadi seseorang yang bisa membuat
+                kamu merasa dicintai.
+                <br><br>
+
+                You are my favorite person, my happiness,
+                and one of the most beautiful parts of my life.
+                <br><br>
+
+                <strong>With all my love, ♡</strong>
             </p>
-
-            <div class="signature">
-                With all my love.
-            </div>
-
         </div>
-
     </section>
 
     <!-- GALLERY -->
 
-    <section class="gallery">
+    <section class="section gallery">
+        <h2 class="section-title">Our Little Memories</h2>
 
-        <h2 class="section-title">Our Memories</h2>
-
-        <div class="section-subtitle">
-            Every moment with you is precious
-        </div>
+        <p class="section-subtitle">
+            EVERY PICTURE HAS A STORY
+        </p>
 
         <div class="gallery-grid">
+            <img src="image.png" alt="Our memory 1">
 
-            <div class="photo">
-                <img src="image.png" alt="Our First Memory">
-            </div>
-
-            <div class="photo">
-                <img src="new u.jpeg" alt="Beautiful Memories">
-            </div>
-
+            <img src="new u.jpeg" alt="Our memory 2">
         </div>
-
     </section>
 
     <!-- FINAL MESSAGE -->
 
     <section class="final">
-
-        <h2>
-            You Are My<br>
-            <span>Favorite Person.</span>
-        </h2>
+        <h2>Forever & Always ♡</h2>
 
         <p>
-            Dari sekian banyak hal yang bisa aku pilih,<br>
-            aku tetap ingin memilih kamu.<br><br>
+            If I could choose again,<br>
+            I would still choose you.<br><br>
 
-            Today, tomorrow, and always. ♡
+            Thank you for being my favorite person.<br>
+            I love you, more than words can say.
         </p>
-
-        <div class="line"></div>
-
-        <p style="color:#d2b582; letter-spacing:3px;">
-            I LOVE YOU IN EVERY UNIVERSE
-        </p>
-
     </section>
 
     <footer>
-        MADE WITH LOVE ♡ JUST FOR YOU
+        MADE WITH LOVE, JUST FOR YOU ♡
     </footer>
 
 </div>
 
 <script>
 
-/* =========================
-   LOGIN SYSTEM
-========================= */
+// PASSWORD LOGIN
+const SECRET_PASSWORD = "100826";
 
-// GANTI PASSWORD DI SINI
-
-const SECRET_PASSWORD = "sayang123";
-
+// LOGIN FUNCTION
 function login() {
-
-    const password =
-        document.getElementById("password").value;
-
-    const error =
-        document.getElementById("errorMessage");
+    const password = document.getElementById("password").value;
+    const error = document.getElementById("error");
 
     if (password === SECRET_PASSWORD) {
-
-        error.style.color = "#bd9b64";
+        error.style.color = "#92744e";
         error.innerHTML = "Welcome to our little world ♡";
 
-        setTimeout(() => {
+        setTimeout(function() {
+            document.getElementById("loginPage").classList.add("hide");
 
-            document.getElementById("loginPage")
-                .classList.add("hide");
-
-            document.getElementById("mainWebsite")
-                .style.display = "block";
+            document.getElementById("mainWebsite").style.display = "block";
 
             window.scrollTo(0, 0);
 
+            startHearts();
         }, 800);
 
     } else {
-
-        error.innerHTML =
-            "Password salah, coba lagi ya sayang ♡";
-
+        error.innerHTML = "Wrong password, my love. Try again ♡";
     }
 }
 
-// ENTER KEY
-
-document.getElementById("password")
-.addEventListener("keypress", function(event) {
-
-    if (event.key === "Enter") {
-        login();
-    }
-
-});
-
-/* =========================
-   SCROLL TO LETTER
-========================= */
-
-function openLetter() {
-
-    document.getElementById("letter")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
-
-}
-
-/* =========================
-   FLOATING HEARTS
-========================= */
-
-let heartInterval = null;
-
-function createHeart() {
-
-    const heart = document.createElement("div");
-
-    heart.className = "heart";
-    heart.innerHTML = Math.random() > 0.5 ? "♡" : "♥";
-
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize =
-        (12 + Math.random() * 20) + "px";
-
-    heart.style.animationDuration =
-        (5 + Math.random() * 5) + "s";
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 10000);
-
-}
-
-// Hati mulai muncul setelah login berhasil
-
+// FLOATING HEART ANIMATION
 function startHearts() {
+    setInterval(function() {
+        const heart = document.createElement("div");
 
-    if (!heartInterval) {
-        heartInterval = setInterval(createHeart, 700);
-    }
+        heart.className = "heart";
+        heart.innerHTML = "♡";
 
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (15 + Math.random() * 25) + "px";
+        heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(function() {
+            heart.remove();
+        }, 10000);
+
+    }, 700);
 }
-
-const originalLogin = login;
-
-login = function() {
-
-    const password =
-        document.getElementById("password").value;
-
-    originalLogin();
-
-    if (password === SECRET_PASSWORD) {
-        startHearts();
-    }
-
-};
 
 </script>
 
