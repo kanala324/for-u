@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Beloved ♡</title>
+<title>Welcome, My Love ♡</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -33,6 +33,135 @@ body {
     overflow-x: hidden;
 }
 
+/* =========================
+   LOGIN PAGE
+========================= */
+
+#loginPage {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background:
+        radial-gradient(circle at top left, #e9d9c5, transparent 45%),
+        linear-gradient(135deg, #f8f3eb, #e8d9c5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transition: opacity .8s ease, visibility .8s ease;
+}
+
+#loginPage.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 430px;
+    padding: 55px 35px;
+    text-align: center;
+    background: #faf7f1;
+    border: 1px solid var(--gold);
+    box-shadow: 0 20px 70px #493b3220;
+    animation: fadeUp 1s ease;
+}
+
+.login-heart {
+    font-size: 45px;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.login-subtitle {
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.login-box h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 43px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.login-box h1 span {
+    color: var(--gold);
+    font-style: italic;
+}
+
+.login-line {
+    width: 55px;
+    height: 1px;
+    background: var(--gold);
+    margin: 25px auto;
+}
+
+.login-description {
+    font-size: 12px;
+    color: #958371;
+    line-height: 2;
+    margin-bottom: 25px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #d8c6a9;
+    background: #fffdf9;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.login-box input:focus {
+    border-color: var(--gold);
+}
+
+.login-box button {
+    width: 100%;
+    padding: 16px;
+    background: var(--dark);
+    border: none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.login-box button:hover {
+    background: var(--gold);
+}
+
+#errorMessage {
+    color: #ad6860;
+    font-size: 11px;
+    margin-top: 15px;
+    min-height: 20px;
+}
+
+.login-footer {
+    margin-top: 35px;
+    color: var(--gold);
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+/* =========================
+   MAIN WEBSITE
+========================= */
+
+#mainWebsite {
+    display: none;
+}
+
 body::before {
     content: "";
     position: fixed;
@@ -43,8 +172,6 @@ body::before {
     pointer-events: none;
     z-index: -1;
 }
-
-/* NAVBAR */
 
 nav {
     position: absolute;
@@ -67,8 +194,6 @@ nav {
     letter-spacing: 4px;
     text-transform: uppercase;
 }
-
-/* HERO */
 
 .hero {
     min-height: 100vh;
@@ -94,7 +219,6 @@ nav {
     font-size: clamp(45px, 9vw, 95px);
     font-weight: 400;
     line-height: 1.15;
-    animation: fadeUp 1.5s ease;
 }
 
 .hero h1 span {
@@ -114,7 +238,6 @@ nav {
     letter-spacing: 1px;
     line-height: 2.2;
     color: #8c7a69;
-    animation: fadeUp 2s ease;
 }
 
 .button {
@@ -137,7 +260,7 @@ nav {
     transform: translateY(-4px);
 }
 
-/* FLOATING HEARTS */
+/* HEART ANIMATION */
 
 .heart {
     position: fixed;
@@ -174,7 +297,7 @@ nav {
     }
 }
 
-/* LETTER SECTION */
+/* LOVE LETTER */
 
 .letter-section {
     padding: 100px 20px;
@@ -303,7 +426,7 @@ footer {
     letter-spacing: 2px;
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 
 @media(max-width: 650px) {
     nav {
@@ -338,149 +461,264 @@ footer {
 
 <body>
 
-<!-- NAVBAR -->
+<!-- =========================
+     LOGIN PAGE
+========================= -->
 
-<nav>
-    <div class="logo">♡ Forever</div>
-    <div class="nav-text">A little love story</div>
-</nav>
+<div id="loginPage">
 
-<!-- HERO -->
+    <div class="login-box">
 
-<section class="hero">
+        <div class="login-heart">♡</div>
 
-    <div class="eyebrow">✦ A Special Letter For You ✦</div>
-
-    <h1>
-        To My<br>
-        <span>Beloved.</span>
-    </h1>
-
-    <div class="line"></div>
-
-    <p>
-        Ada banyak hal indah di dunia ini,<br>
-        tetapi bertemu denganmu adalah<br>
-        salah satu yang paling aku syukuri.
-    </p>
-
-    <button class="button" onclick="openLetter()">
-        Open My Heart ♡
-    </button>
-
-</section>
-
-<!-- LOVE LETTER -->
-
-<section class="letter-section" id="letter">
-
-    <h2 class="section-title">A Letter For You</h2>
-
-    <div class="section-subtitle">
-        Words From My Heart
-    </div>
-
-    <div class="letter">
-
-        <p>
-            Untuk seseorang yang selalu punya tempat
-            istimewa di hatiku.
-            <br><br>
-
-            Aku mungkin bukan seseorang yang sempurna.
-            Aku juga tidak selalu bisa memberikan
-            hal-hal yang luar biasa.
-            <br><br>
-
-            Namun, satu hal yang ingin kamu tahu:
-            aku selalu ingin melihatmu bahagia.
-            <br><br>
-
-            Terima kasih sudah hadir dalam hidupku.
-            Terima kasih untuk setiap senyum,
-            cerita, dan kenangan yang kita buat.
-            <br><br>
-
-            Jika waktu bisa terus berjalan,
-            aku berharap kita tetap berjalan
-            bersama, saling menggenggam,
-            dan saling memilih setiap hari.
-            <br><br>
-
-            I love you, more than words can say. ♡
+        <p class="login-subtitle">
+            A LITTLE SURPRISE FOR YOU
         </p>
 
-        <div class="signature">
-            With all my love.
+        <h1>
+            Welcome,<br>
+            <span>My Love.</span>
+        </h1>
+
+        <div class="login-line"></div>
+
+        <p class="login-description">
+            This little world was made<br>
+            especially for you.
+        </p>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter our secret password"
+        >
+
+        <button onclick="login()">
+            Unlock My Heart ♡
+        </button>
+
+        <p id="errorMessage"></p>
+
+        <div class="login-footer">
+            MADE WITH LOVE ♡
         </div>
 
     </div>
 
-</section>
+</div>
 
-<!-- GALLERY 2 PHOTOS -->
+<!-- =========================
+     MAIN WEBSITE
+========================= -->
 
-<section class="gallery">
+<div id="mainWebsite">
 
-    <h2 class="section-title">Our Memories</h2>
+    <nav>
+        <div class="logo">♡ Forever</div>
+        <div class="nav-text">A little love story</div>
+    </nav>
 
-    <div class="section-subtitle">
-        Every moment with you is precious
-    </div>
+    <!-- HERO -->
 
-    <div class="gallery-grid">
+    <section class="hero">
 
-        <div class="photo">
-            <img src="image.png" alt="Our First Memory">
+        <div class="eyebrow">
+            ✦ A Special Letter For You ✦
         </div>
 
-        <div class="photo">
-            <img src="new u.jpeg" alt="Beautiful Memories">
+        <h1>
+            To My<br>
+            <span>Beloved.</span>
+        </h1>
+
+        <div class="line"></div>
+
+        <p>
+            Ada banyak hal indah di dunia ini,<br>
+            tetapi bertemu denganmu adalah<br>
+            salah satu yang paling aku syukuri.
+        </p>
+
+        <button class="button" onclick="openLetter()">
+            Open My Heart ♡
+        </button>
+
+    </section>
+
+    <!-- LETTER -->
+
+    <section class="letter-section" id="letter">
+
+        <h2 class="section-title">A Letter For You</h2>
+
+        <div class="section-subtitle">
+            Words From My Heart
         </div>
 
-    </div>
+        <div class="letter">
 
-</section>
+            <p>
+                Untuk seseorang yang selalu punya tempat
+                istimewa di hatiku.
+                <br><br>
 
-<!-- FINAL MESSAGE -->
+                Aku mungkin bukan seseorang yang sempurna.
+                Aku juga tidak selalu bisa memberikan
+                hal-hal yang luar biasa.
+                <br><br>
 
-<section class="final">
+                Namun, satu hal yang ingin kamu tahu:
+                aku selalu ingin melihatmu bahagia.
+                <br><br>
 
-    <h2>
-        You Are My<br>
-        <span>Favorite Person.</span>
-    </h2>
+                Terima kasih sudah hadir dalam hidupku.
+                Terima kasih untuk setiap senyum,
+                cerita, dan kenangan yang kita buat.
+                <br><br>
 
-    <p>
-        Dari sekian banyak hal yang bisa aku pilih,<br>
-        aku tetap ingin memilih kamu.<br><br>
+                Jika waktu bisa terus berjalan,
+                aku berharap kita tetap berjalan
+                bersama, saling menggenggam,
+                dan saling memilih setiap hari.
+                <br><br>
 
-        Today, tomorrow, and always. ♡
-    </p>
+                I love you, more than words can say. ♡
+            </p>
 
-    <div class="line"></div>
+            <div class="signature">
+                With all my love.
+            </div>
 
-    <p style="color:#d2b582; letter-spacing:3px;">
-        I LOVE YOU IN EVERY UNIVERSE
-    </p>
+        </div>
 
-</section>
+    </section>
 
-<footer>
-    MADE WITH LOVE ♡ JUST FOR YOU
-</footer>
+    <!-- GALLERY -->
+
+    <section class="gallery">
+
+        <h2 class="section-title">Our Memories</h2>
+
+        <div class="section-subtitle">
+            Every moment with you is precious
+        </div>
+
+        <div class="gallery-grid">
+
+            <div class="photo">
+                <img src="image.png" alt="Our First Memory">
+            </div>
+
+            <div class="photo">
+                <img src="new u.jpeg" alt="Beautiful Memories">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FINAL MESSAGE -->
+
+    <section class="final">
+
+        <h2>
+            You Are My<br>
+            <span>Favorite Person.</span>
+        </h2>
+
+        <p>
+            Dari sekian banyak hal yang bisa aku pilih,<br>
+            aku tetap ingin memilih kamu.<br><br>
+
+            Today, tomorrow, and always. ♡
+        </p>
+
+        <div class="line"></div>
+
+        <p style="color:#d2b582; letter-spacing:3px;">
+            I LOVE YOU IN EVERY UNIVERSE
+        </p>
+
+    </section>
+
+    <footer>
+        MADE WITH LOVE ♡ JUST FOR YOU
+    </footer>
+
+</div>
 
 <script>
 
-// SCROLL TO LETTER
+/* =========================
+   LOGIN SYSTEM
+========================= */
 
-function openLetter() {
-    document.getElementById("letter").scrollIntoView({
-        behavior: "smooth"
-    });
+// GANTI PASSWORD DI SINI
+
+const SECRET_PASSWORD = "sayang123";
+
+function login() {
+
+    const password =
+        document.getElementById("password").value;
+
+    const error =
+        document.getElementById("errorMessage");
+
+    if (password === SECRET_PASSWORD) {
+
+        error.style.color = "#bd9b64";
+        error.innerHTML = "Welcome to our little world ♡";
+
+        setTimeout(() => {
+
+            document.getElementById("loginPage")
+                .classList.add("hide");
+
+            document.getElementById("mainWebsite")
+                .style.display = "block";
+
+            window.scrollTo(0, 0);
+
+        }, 800);
+
+    } else {
+
+        error.innerHTML =
+            "Password salah, coba lagi ya sayang ♡";
+
+    }
 }
 
-// FLOATING HEARTS
+// ENTER KEY
+
+document.getElementById("password")
+.addEventListener("keypress", function(event) {
+
+    if (event.key === "Enter") {
+        login();
+    }
+
+});
+
+/* =========================
+   SCROLL TO LETTER
+========================= */
+
+function openLetter() {
+
+    document.getElementById("letter")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+let heartInterval = null;
 
 function createHeart() {
 
@@ -490,20 +728,46 @@ function createHeart() {
     heart.innerHTML = Math.random() > 0.5 ? "♡" : "♥";
 
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = (12 + Math.random() * 20) + "px";
-    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+    heart.style.fontSize =
+        (12 + Math.random() * 20) + "px";
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
 
     document.body.appendChild(heart);
 
     setTimeout(() => {
         heart.remove();
     }, 10000);
+
 }
 
-setInterval(createHeart, 700);
+// Hati mulai muncul setelah login berhasil
+
+function startHearts() {
+
+    if (!heartInterval) {
+        heartInterval = setInterval(createHeart, 700);
+    }
+
+}
+
+const originalLogin = login;
+
+login = function() {
+
+    const password =
+        document.getElementById("password").value;
+
+    originalLogin();
+
+    if (password === SECRET_PASSWORD) {
+        startHearts();
+    }
+
+};
 
 </script>
 
 </body>
 </html>
-
