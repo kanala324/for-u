@@ -1,1 +1,1 @@
-me and pacarku padaku
+me and pacarku paduka
