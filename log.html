@@ -1,1 +1,226 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome , My Love ♡</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+
+    background:
+    radial-gradient(circle at top left, #e9d9c5, transparent 45%),
+    linear-gradient(135deg, #f8f3eb, #e8d9c5);
+}
+
+.login-box {
+    width: 100%;
+    max-width: 430px;
+    padding: 55px 35px;
+    text-align: center;
+    background: #faf7f1;
+    border: 1px solid #bd9b64;
+    box-shadow: 0 20px 70px #493b3220;
+    animation: fadeUp 1s ease;
+}
+
+.heart {
+    font-size: 45px;
+    color: #bd9b64;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: #bd9b64;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 43px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #493b32;
+}
+
+h1 span {
+    color: #bd9b64;
+    font-style: italic;
+}
+
+.line {
+    width: 55px;
+    height: 1px;
+    background: #bd9b64;
+    margin: 25px auto;
+}
+
+.description {
+    font-size: 12px;
+    color: #958371;
+    line-height: 2;
+    margin-bottom: 25px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #d8c6a9;
+    background: #fffdf9;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+input:focus {
+    border-color: #bd9b64;
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    background: #493b32;
+    border: none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+button:hover {
+    background: #bd9b64;
+}
+
+#errorMessage {
+    color: #ad6860;
+    font-size: 11px;
+    margin-top: 15px;
+    min-height: 20px;
+}
+
+.footer {
+    margin-top: 35px;
+    color: #bd9b64;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+
+    <div class="heart">♡</div>
+
+    <p class="subtitle">A LITTLE SURPRISE FOR YOU</p>
+
+    <h1>
+        A Secret<br>
+        <span>Place For You.</span>
+    </h1>
+
+    <div class="line"></div>
+
+    <p class="description">
+        This little world was made<br>
+        especially for you.
+    </p>
+
+    <input
+        type="password"
+        id="password"
+        placeholder="Enter our secret password"
+    >
+
+    <button onclick="login()">
+        Unlock My Heart ♡
+    </button>
+
+    <p id="errorMessage"></p>
+
+    <div class="footer">
+        MADE WITH LOVE ♡
+    </div>
+
+</div>
+
+<script>
+
+// GANTI PASSWORD DI SINI
+
+const SECRET_PASSWORD = "100826";
+
+function login() {
+
+    const password =
+        document.getElementById("password").value;
+
+    const error =
+        document.getElementById("errorMessage");
+
+    if (password === SECRET_PASSWORD) {
+
+        error.style.color = "#bd9b64";
+        error.innerHTML = "Welcome to our little world ♡";
+
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 1000);
+
+    } else {
+
+        error.innerHTML =
+        "Password salah, coba lagi ya sayang ♡";
+
+    }
+}
+
+// ENTER UNTUK LOGIN
+
+document.getElementById("password")
+.addEventListener("keypress", function(event) {
+
+    if (event.key === "Enter") {
+        login();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
+
